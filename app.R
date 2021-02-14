@@ -17,7 +17,7 @@ colnames(data)[5] <- "GENERATION"
 # remove commas from generation values
 data$GENERATION <-gsub(",", "", data$GENERATION)
 
-# change generation values to numbers
+# change generation values to numbers, and change megawatthours to gigawatthours
 data$GENERATION <- as.numeric(as.character(data$GENERATION)) / 1000
 
 # capitalize all state names
