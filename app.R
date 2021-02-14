@@ -54,6 +54,7 @@ dataTotals <- subset(data, data$STATE == "US-TOTAL" & data$TYPE == "Total Electr
 
 # create shiny dashboard
 ui <- dashboardPage(
+  skin="green",
   dashboardHeader(title = "Power and the Passion"),
   dashboardSidebar(disable = FALSE, collapsed = FALSE,
     # checkboxes for sources
@@ -72,18 +73,18 @@ ui <- dashboardPage(
           # stacked bar chart showing % of energy source per year
           box(title="Energy Production Percentage by Source From 1990 to 2019", solidHeader = TRUE, status="primary",
           width=10, plotOutput("bar2", height=225))
-        ),
+        )
       ),
       
       column(5,
         fluidRow(
           # line chart showing amount of energy source per year
-          box(title="Energy Production by Source From 1990 to 2019", solidHeader = TRUE, status="primary",
+          box(title="Energy Production by Source From 1990 to 2019", solidHeader = TRUE, status="warning",
           width=10, plotOutput("line1", height=225))
         ),
         fluidRow(
           # table showing amount of energy source per year
-          box(title="Energy Production by Source From 1990 to 2019", solidHeader = TRUE, status = "primary",
+          box(title="Energy Production by Source From 1990 to 2019", solidHeader = TRUE, status = "danger",
           width = 12, dataTableOutput("table1", height = 225))
         )
       )
