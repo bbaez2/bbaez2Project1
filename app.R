@@ -103,7 +103,7 @@ server <- function(input, output, session) {
   output$bar1 <- renderPlot({
     ggplot(subset(data, data$SOURCE != "Total" & data$STATE == "US-TOTAL"
     & data$TYPE == "Total Electric Power Industry"), aes(fill=SOURCE, x=YEAR, y=GENERATION)) +
-    geom_bar(stat="identity") + xlab("Year") + ylab("Generation (Gigawatthours")
+    geom_bar(stat="identity") + xlab("Year") + ylab("Generation (Gigawatthours)")
   })
   
   # create stacked bar chart for % amount of energy
